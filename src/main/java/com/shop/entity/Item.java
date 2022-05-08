@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
  */
 
 @Entity //item클래스를 entity로 선언
-@Table(name = "item")  // 어떤 테이블과 매핑될지 지정 item 테이블과 매핑되도록 이름을 item이라 지정
+@Table(name = "item")  // 어떤 테이블과 매핑될지 지정, item 테이블과 매핑되도록 이름을 item이라 지정
 @Getter
 @Setter
 @ToString
@@ -46,8 +46,7 @@ public class Item {
 
     private LocalDateTime regTime; //등록 시간
 
-    private LocalDateTime updateTime; //수정 시간간
-
+    private LocalDateTime updateTime; //수정 시간
 
 
 }
