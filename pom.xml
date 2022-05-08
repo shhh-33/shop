@@ -105,6 +105,14 @@
             <version>5.3.3.RELEASE</version>
         </dependency>
 
+        <!--서로 다른 클래스의 값을 필드의 이름과 자료형이 같으면 getter, setter를 통해 값을 복사해서 객체 반환-->
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>2.4.4</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
