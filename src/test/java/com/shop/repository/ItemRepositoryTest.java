@@ -33,7 +33,7 @@ class ItemRepositoryTest {
     @PersistenceContext
     EntityManager em;
 
-    //@Test
+    @Test
     @DisplayName("상품저장테스트")
     public  void createItemTest(){
         Item item =new Item();

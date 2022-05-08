@@ -38,6 +38,7 @@ class MemberServiceTest {
     public void saveMemberTest(){
         Member member = createMember();
         Member savedMember = memberService.saveMember(member);
+        //저장하려고 요청했던 값,실제 저장된 데이터 비교 : (기대 값, 실제 저장된 값)
         assertEquals(member.getEmail(), savedMember.getEmail());
         assertEquals(member.getName(), savedMember.getName());
         assertEquals(member.getAddress(), savedMember.getAddress());
@@ -51,6 +52,7 @@ class MemberServiceTest {
         Member member1 = createMember();
         Member member2 = createMember();
         memberService.saveMember(member1);
+
         Throwable e = assertThrows(IllegalStateException.class, () -> {
             memberService.saveMember(member2);});
         assertEquals("이미 가입된 회원입니다.", e.getMessage());
