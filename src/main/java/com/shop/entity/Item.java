@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-public class Item {
+public class Item extends BaseEntity {
 
     @Id //entity는 반드시 기본키 가져야한다.
     @Column(name = "item_id") //테이블에 매핑될 컬럼의 이름
@@ -44,9 +44,9 @@ public class Item {
     private ItemSellStatus itemSellStatus; //상품 판매 상태
     //enum : 재고가 없을때 프론트에 노출x or 판매중
 
-    private LocalDateTime regTime; //등록 시간
+   /* private LocalDateTime regTime; //등록 시간
 
-    private LocalDateTime updateTime; //수정 시간
+    private LocalDateTime updateTime; //수정 시간*/
 
 
 }

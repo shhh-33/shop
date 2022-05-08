@@ -16,7 +16,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
-public class Order {
+public class Order extends BaseEntity {
 
     @Id @GeneratedValue
     @Column(name = "order_id")
@@ -39,8 +39,8 @@ public class Order {
             ,orphanRemoval = true) //고아객체제거(부모엔티티와 연관관계 끊어짐) , 참조하는 기능이 하나일때만 사용할 것
     private List<OrderItem> orderItems = new ArrayList<>(); //하나의 주문이 여러개의 주문 상품을 가지므로 List사용
 
-    private LocalDateTime regTime;
+   /* private LocalDateTime regTime;
 
     private LocalDateTime updateTime;
-
+*/
 }
