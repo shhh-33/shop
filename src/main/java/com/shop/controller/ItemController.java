@@ -124,10 +124,18 @@ public class ItemController {
 
         model.addAttribute("items", items); //조회한 상품 데이터,페이징 정보 전달
         model.addAttribute("itemSearchDto", itemSearchDto); //페이지 전환시 기존 검색 조건을 유지한 채 이동할 수 있도록 뷰에 다시 전달
-        model.addAttribute("maxPage", 5);//페이지번호 최대 갯수수
+        model.addAttribute("maxPage", 5);//페이지번호 최대 개수
         return "item/itemMng";
     }
 
+
+    //상품 상세 페이지
+    @GetMapping(value = "/item/{itemId}")
+    public String itemDtl(Model model, @PathVariable("itemId") Long itemId){
+        ItemFormDto itemFormDto = itemService.getItemDtl(itemId);
+        model.addAttribute("item", itemFormDto);
+        return "item/itemDtl";
+    }
 
 
 }
