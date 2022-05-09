@@ -2,6 +2,7 @@ package com.shop.entity;
 
 
 import com.shop.constant.ItemSellStatus;
+import com.shop.dto.ItemFormDto;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -47,6 +48,21 @@ public class Item extends BaseEntity {
    /* private LocalDateTime regTime; //등록 시간
 
     private LocalDateTime updateTime; //수정 시간*/
+
+    /*
+    엔티티 클래스에 비즈니스 로직을 추가하면 객체 지향적 코딩, 코드 재활용 가능
+    데이터 변경 포인트를 한군데에서 관리할 수 있다.
+     */
+
+    //상품 업데이트 로직
+    public void updateItem(ItemFormDto itemFormDto){
+        this.itemNm = itemFormDto.getItemNm();
+        this.price =itemFormDto.getPrice();
+        this.stockNumber = itemFormDto.getStockNumber();
+        this.itemDetail =itemFormDto.getItemDetail();
+        this.itemSellStatus =itemFormDto.getItemSellStatus();
+    }
+
 
 
 }
