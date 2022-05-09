@@ -13,8 +13,10 @@ import org.springframework.data.querydsl.QuerydslPredicateExecutor;
   <엔티티 타입 클래스, 기본키 타입>
   Item클래스는 기본키 타입이 Long이므로 Long을 넣어준다
 
+3.Spring Data Jpa 리포지토리에서 사용자 정의 인터페이스 상속
+->querydsl로 구현한 상품관리 페이지 목록을 불러오는 getAdminItemPage()메소드 사용할 수 있다.
 */
-public interface ItemRepository extends JpaRepository<Item,Long> ,QuerydslPredicateExecutor<Item>{
+public interface ItemRepository extends JpaRepository<Item,Long> ,QuerydslPredicateExecutor<Item> ,ItemRepositoryCustom{
 
     /* 쿼리메소드 : 데이터 조회 기능
        Repository 인터페이스에 간단한 네이밍 룰을 이용하여 메소드를 작성하면 원하는 쿼리를 실행할수있다.
