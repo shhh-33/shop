@@ -83,24 +83,6 @@ public class ItemService {
         return itemFormDto;
     }
 
- /*   //상품 수정 페이지로 진입 나중에 등록,수정 페이지 나눌것
-    @GetMapping(value = "/admin/item/{itemId}")
-    public String itemDtl(@PathVariable("itemId") Long itemId, Model model) {
-
-        try {
-            ItemFormDto itemFormDto = itemService.getItemDtl(itemId); //조회한 상품 데이터
-            model.addAttribute("itemFormDto", itemFormDto);
-
-        } catch (EntityNotFoundException e) { //상품엔티티 없으면
-            model.addAttribute("errorMessage", "존재하지 않는 상품 입니다.");
-            model.addAttribute("itemFormDto", new ItemFormDto());
-            //상품 등록 페이지로
-            return "item/itemForm";
-
-        }
-        return "item/itemForm";
-
-    }*/
 
 
     //상품 업데이트 (변경감지)
@@ -123,6 +105,7 @@ public class ItemService {
         }
         return item.getId();
     }
+
 
     //상품데이터를 조회 (상품 조회 조건,페이지 정보를 파라미터로 받아)
     @Transactional(readOnly = true)  //데이터의 수정이 일어나지 않으므로 readOnly

@@ -121,6 +121,7 @@
                 </div>
             </div>
         </div>
+
         <!--상품 이미지 수정-->
         <div th:if="${not #lists.isEmpty(itemFormDto.itemImgDtoList)}"> <!--비어있지 않다면-->
             <div class="form-group" th:each="itemImgDto, status: ${itemFormDto.itemImgDtoList}">

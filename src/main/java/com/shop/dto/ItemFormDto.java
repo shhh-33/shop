@@ -11,6 +11,9 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 상품 데이터 정보 전달
+ */
 @Getter @Setter
 public class ItemFormDto {
 

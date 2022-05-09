@@ -75,7 +75,8 @@ public class ItemController {
 
 
 
- /*   @GetMapping(value = "/admin/item/{itemId}")
+    //상품수정(나중에 수정 페이지 새로 만들기)
+    @GetMapping(value = "/admin/item/{itemId}")
     public String itemDtl(@PathVariable("itemId") Long itemId, Model model) {
 
         try {
@@ -89,7 +90,7 @@ public class ItemController {
 
         return "item/itemForm";
     }
-*/
+
 
     //상품 수정 url
     @PostMapping(value = "/admin/item/{itemId}")
