@@ -15,8 +15,10 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.thymeleaf.util.StringUtils;
 
 import javax.persistence.EntityExistsException;
+import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -80,5 +82,27 @@ public class OrderService {
         //페이지 구현 객체를 생성하여 반환
         return new PageImpl<OrderHistDto>(orderHistDtos, pageable, totalCount);
     }
+
+    @Transactional(readOnly = true)
+    //현재 로그인한 사용자와 주문 데이터를 생성한 사용자가 같은지 검사 : 같으면 true, 다르면 false
+    public boolean validateOrder(Long orderId, String email){
+        Member curMember = memberRepository.findByEmail(email);
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(EntityNotFoundException::new);
+        Member savedMember = order.getMember();
+
+        if(!StringUtils.equals(curMember.getEmail(), savedMember.getEmail())){
+            return false;
+        }
+
+        return true;
+    }
+
+    public void cancelOrder(Long orderId){
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(EntityNotFoundException::new);
+        order.cancelOrder();  //주문 취소 상태로 변경하면 변경 감지 기능에 의해서 트랜잭션 끝날때 update 쿼리 실행
+    }
+
 
 }

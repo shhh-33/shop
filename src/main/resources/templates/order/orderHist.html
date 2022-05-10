@@ -21,7 +21,7 @@
                 orderId : orderId,
             };
 
-            var param = JSON.stringify(paramData);
+            var param = JSON.stringify(paramData); //취소할 주문 번호 파라미터로 넘김
 
             $.ajax({
                 url      : url,
@@ -34,7 +34,7 @@
                 },
                 dataType : "json",
                 cache   : false,
-                success  : function(result, status){
+                success  : function(result, status){ // 정상적으로 취소됐으면 현재페이지로 리다이렉트
                     alert("주문이 취소 되었습니다.");
                     location.href='/orders/' + [[${page}]];
                 },
@@ -48,6 +48,9 @@
                 }
             });
         }
+
+
+
     </script>
 
 </th:block>
