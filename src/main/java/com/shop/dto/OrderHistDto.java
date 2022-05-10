@@ -9,6 +9,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
+//주문 정보 담음
 @Getter @Setter
 public class OrderHistDto {
 
