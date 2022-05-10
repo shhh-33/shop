@@ -23,17 +23,20 @@
         function calculateToalPrice(){
             var count = $("#count").val(); //수량
             var price = $("#price").val(); //가격
-            var totalPrice = price*count; //결제 금액액            $("#totalPrice").html(totalPrice + '원');
+            var totalPrice = price*count; //결제 금액
+            $("#totalPrice").html(totalPrice + '원');
         }
 
-       /* function order(){
+        // 주문 ajax
+        function order(){
+            //시큐리티 사용할 경우 post방식의 데이터 전송에는 csrf 토큰 값이 필요
             var token = $("meta[name='_csrf']").attr("content");
             var header = $("meta[name='_csrf_header']").attr("content");
 
             var url = "/order";
-            var paramData = {
-                itemId : $("#itemId").val(),
-                count : $("#count").val()
+            var paramData = { //전달할 객체 생성
+                itemId : $("#itemId").val(), //주문할 상품의 아이디
+                count : $("#count").val() //주문 수량 데이터
             };
 
             var param = JSON.stringify(paramData);
@@ -41,17 +44,17 @@
             $.ajax({
                 url      : url,
                 type     : "POST",
-                contentType : "application/json",
+                contentType : "application/json", //서버에 데이터 보낼 형식
                 data     : param,
                 beforeSend : function(xhr){
                     /!* 데이터를 전송하기 전에 헤더에 csrf값을 설정 *!/
                     xhr.setRequestHeader(header, token);
                 },
-                dataType : "json",
+                dataType : "json", //서버에서 결과값으로 받을 데이터 타입
                 cache   : false,
-                success  : function(result, status){
+                success  : function(result, status){ //주문 로직 호출 성공시
                     alert("주문이 완료 되었습니다.");
-                    location.href='/';
+                    location.href='/'; //메인으로
                 },
                 error : function(jqXHR, status, error){
 
@@ -59,14 +62,14 @@
                         alert('로그인 후 이용해주세요');
                         location.href='/members/login';
                     } else{
-                        alert(jqXHR.responseText);
+                        alert(jqXHR.responseText); //에러 발생시 해당 메세지
                     }
 
                 }
             });
         }
 
-        function addCart(){
+        /*function addCart(){
             var token = $("meta[name='_csrf']").attr("content");
             var header = $("meta[name='_csrf_header']").attr("content");
 

@@ -13,8 +13,7 @@ import java.util.List;
 
 @Entity
 @Table(name ="orders")
-@Getter
-@Setter
+@Getter @Setter
 @ToString
 public class Order extends BaseEntity {
 
@@ -42,5 +41,51 @@ public class Order extends BaseEntity {
    /* private LocalDateTime regTime;
 
     private LocalDateTime updateTime;
-*/
+   */
+
+
+    //주문 객체 만들기
+    public void addOrderItem(OrderItem orderItem) { //주문 상품 정보 담아줌
+        orderItems.add(orderItem); //orderItem 객체를 order 객체의 orderItems에 추가합니다.
+        orderItem.setOrder(this);
+    }
+
+
+    public static Order createOrder(Member member, List<OrderItem> orderItemList){
+        Order order = new Order();
+        order.setMember(member); //상품을 주문한 회원의 정보를 세팅합니다.
+
+        /*
+        상품 페이지에서는 1개의 상품을 주문하지만,
+        장바구니 페이지에서는 한번에 여러개의 상품을 주문한다.
+        따라서 여러개의 주문 상품을 담을 수 있도록 리스트 형태로 파라미터 값을 받으며
+        주문 객체에 ordrItem 객체 추가
+         */
+        for(OrderItem orderItem : orderItemList){
+            order.addOrderItem(orderItem);
+        }
+        order.setOrderStatus(OrderStatus.ORDER); //주문 상태 세팅
+        order.setOrderDate(LocalDateTime.now()); //현재 시간을 주문 시간으로 세팅팅
+
+        return order;
+    }
+
+    //총 주문 금액
+    public int getTotalPrice(){
+        int totalPrice = 0;
+        for(OrderItem orderItem : orderItems){
+            totalPrice +=orderItem.getTotalPrice();
+        }
+        return  totalPrice;
+    }
+
+
+
+
+
+
+    
+
+
+
 }

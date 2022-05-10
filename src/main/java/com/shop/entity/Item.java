@@ -3,6 +3,7 @@ package com.shop.entity;
 
 import com.shop.constant.ItemSellStatus;
 import com.shop.dto.ItemFormDto;
+import com.shop.exception.OutOfStiockException;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -62,6 +63,21 @@ public class Item extends BaseEntity {
         this.itemDetail =itemFormDto.getItemDetail();
         this.itemSellStatus =itemFormDto.getItemSellStatus();
     }
+
+    //상품 재고 감소 로직
+    public void removeStock(int stockNumber){
+        int restStock =this.stockNumber -stockNumber; //상품 재고수량 - 주문 = 남은 재고 수량
+
+        //주문수량 > 재고
+        if(restStock<0){
+            throw new OutOfStiockException("상품의 재고가 부족합니다. 현재 재고 수량 : " + this.stockNumber);
+        }
+        //상품의 현재 재고값으로 할당 <= 주문 후 남은 재고 수량을
+        this.stockNumber = restStock;
+    }
+
+
+
 
 
 
