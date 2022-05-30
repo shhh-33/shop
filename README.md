@@ -1,7 +1,8 @@
 # shop
 
  ## 🎈기획 의도
- JPA를 이용한 연관관계 매핑과 Querydsl을 이용해 데이터를 다양한 조건에 따라 조회하는 방법을 학습하고자 진행한 클론 코딩 프로젝트입   니다. 쇼핑몰의 기본적인 기능을 구현한 웹 어플리케이션입니다.
+ JPA를 이용한 연관관계 매핑과 Querydsl을 이용해 데이터를 다양한 조건에 따라 조회하는 방법을 학습하고자
+ 진행한 클론 코딩 프로젝트입니다. 쇼핑몰의 기본적인 기능을 구현한 웹 어플리케이션입니다.
 
  ## 🎈개발 환경
 Window10, JDK11, Intellij, MySQL, Spring Boot(ver2.6.7), Maven, Spring JPA, Spring Sequrity, Thymeleaf, Lombok
