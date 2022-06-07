@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -37,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/");  //로그아웃 성공시 이동할 url
 
         http.authorizeRequests() //시큐리티 처리에 HttpServletRequest를 이용한다는 것을 의미
-                .mvcMatchers("/", "/members/**", "/item/**", "/images/**").permitAll() // permitAll을 통해 모든 사용자가 인증(로그인)없이 해당경로에 접근 -메인,회원관련url,상품 상세페이지, 상품 이미지 경로
+                .mvcMatchers("/", "/members/**", "/item/**", "/images/**","/js/**").permitAll() // permitAll을 통해 모든 사용자가 인증(로그인)없이 해당경로에 접근 -메인,회원관련url,상품 상세페이지, 상품 이미지 경로
                 .mvcMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated();
 
@@ -46,6 +47,32 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     }
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+
+        web.ignoring().antMatchers(
+
+                // "원하는 url",
+
+                "swagger-ui.html",   // swgger 사용시
+
+                "/main.html",   // front-end 에서 build한 static file
+
+                "/favicon.ico",   // 여기서 설정 안 해주면 index.html이 읽을 수 없음
+
+                "/css/**",   // 여기서 설정 안 해주면 index.html이 읽을 수 없음
+
+                "/fonts/**",   // 여기서 설정 안 해주면 index.html이 읽을 수 없음
+
+                "/img/**",   // 여기서 설정 안 해주면 index.html이 읽을 수 없음
+
+                "/js/**"   // 여기서 설정 안 해주면 index.html이 읽을 수 없음
+
+        );
+
+    }
+
+
 
 
     //비밀번호 암호화
