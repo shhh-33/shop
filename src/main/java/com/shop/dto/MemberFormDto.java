@@ -1,9 +1,11 @@
 package com.shop.dto;
 
+import com.shop.entity.Address;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
+import javax.persistence.Embedded;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
@@ -26,7 +28,7 @@ public class MemberFormDto {
     private String password;
 
     @NotBlank(message = "주소는 필수 입력 값입니다.")
-    private String address;
+    private Address address;
 
 
 

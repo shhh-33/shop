@@ -27,7 +27,8 @@ public class Member extends BaseEntity {
 
     private String password;
 
-    private String address;
+    @Embedded
+    private Address address;
 
     @Enumerated(EnumType.STRING) //eum 순서가 바뀌지 않도록록
     private Role role;
