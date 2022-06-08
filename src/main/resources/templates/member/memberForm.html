@@ -61,10 +61,23 @@
         </div>
 
         <div class="form-group">
-            <label th:for="address">주소</label>
-            <input type="text" th:field="*{address}" class="form-control" placeholder="주소를 입력해주세요">
-            <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="fieldError">Incorrect data</p>
+            <label th:for="city">도시</label>
+            <input type="text" th:field="*{city}" class="form-control" placeholder="도시를 입력하세요">
+            <p th:if="${#fields.hasErrors('city')}" th:errors="*{city}" class="fieldError">Incorrect data</p>
         </div>
+
+        <div class="form-group">
+            <label th:for="street">구</label>
+            <input type="text" th:field="*{street}" class="form-control" placeholder="구를 입력하세요">
+            <p th:if="${#fields.hasErrors('street')}" th:errors="*{street}" class="fieldError">Incorrect data</p>
+        </div>
+
+        <div class="form-group">
+            <label th:for="city">zipcode</label>
+            <input type="text" th:field="*{zipcode}" class="form-control" placeholder="상세주소를 입력하세요">
+            <p th:if="${#fields.hasErrors('zipcode')}" th:errors="*{zipcode}" class="fieldError">Incorrect data</p>
+        </div>
+
 
         <div style="text-align: center">
             <button type="submit" class="btn btn-primary" style="">Submit</button>

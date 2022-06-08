@@ -27,8 +27,13 @@ public class MemberFormDto {
     private String password;
 
     @NotBlank(message = "주소는 필수 입력 값입니다.")
-    private Address address;
+    private String city;
+
+    private String street;
+
+    private String zipcode;
 
 
-
+    public void setAddress(Address address) {
+    }
 }
