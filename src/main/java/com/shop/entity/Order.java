@@ -11,6 +11,8 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import static javax.persistence.FetchType.LAZY;
+
 @Entity
 @Table(name ="orders")
 @Getter @Setter
@@ -42,6 +44,11 @@ public class Order extends BaseEntity {
 
     private LocalDateTime updateTime;
    */
+
+    //cascade : order를 저장할때 delivery도 자동으로 persist 해준다.
+    @OneToOne(fetch = LAZY, cascade = CascadeType.ALL) //하나의 배송정보는 하나의 주문정보만 가져야 하니까
+    @JoinColumn(name = "delivery_id")  //연관관계 주인 fk
+    private Delivery delivery; //배송정보
 
 
     //주문 객체 만들기

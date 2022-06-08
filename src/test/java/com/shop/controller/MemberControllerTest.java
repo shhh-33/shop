@@ -2,6 +2,7 @@ package com.shop.controller;
 
 
 import com.shop.dto.MemberFormDto;
+import com.shop.entity.Address;
 import com.shop.entity.Member;
 import com.shop.service.MemberService;
 import org.junit.Test;
@@ -37,7 +38,7 @@ class MemberControllerTest {
         MemberFormDto memberFormDto = new MemberFormDto();
         memberFormDto.setEmail(email);
         memberFormDto.setName("홍길동");
-        memberFormDto.setAddress("서울시 마포구 합정동");
+        memberFormDto.setAddress(new Address("서울", "강가", "123"));
         memberFormDto.setPassword(password);
         Member member = Member.createMember(memberFormDto, passwordEncoder);
         return memberService.saveMember(member);

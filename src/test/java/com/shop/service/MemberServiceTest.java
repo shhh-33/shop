@@ -1,6 +1,7 @@
 package com.shop.service;
 
 import com.shop.dto.MemberFormDto;
+import com.shop.entity.Address;
 import com.shop.entity.Member;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -28,7 +29,7 @@ class MemberServiceTest {
         MemberFormDto memberFormDto = new MemberFormDto();
         memberFormDto.setEmail("test@email.com");
         memberFormDto.setName("홍길동");
-        memberFormDto.setAddress("서울시 마포구 합정동");
+        memberFormDto.setAddress(new Address("서울시","구","105호"));
         memberFormDto.setPassword("1234");
         return Member.createMember(memberFormDto, passwordEncoder);
     }
