@@ -12,6 +12,10 @@ SpringBoot, Java, JavaScript, jQuery, Querydsl, HTML/CSS
 
 
  ## 🎈코드 설명 및 시연화면 
+ 
+ ### 💡로그인, 회원가입
+ https://lshh222777.tistory.com/127?category=991143
+ 
  ### 💡상품 등록
  https://lshh222777.tistory.com/132?category=991143
  
