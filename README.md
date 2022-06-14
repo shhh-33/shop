@@ -17,6 +17,11 @@ SpringBoot, Java, JavaScript, jQuery, Querydsl, HTML/CSS
  ### 💡로그인, 회원가입
  https://lshh222777.tistory.com/127?category=991143
  
+ ### 💡연관관계 매핑(DB)
+ https://lshh222777.tistory.com/130
+ 
+ 
+ 
  ### 💡상품 등록
  https://lshh222777.tistory.com/132?category=991143
  
