@@ -9,7 +9,7 @@
 Window10, JDK11, Intellij, MySQL, Spring Boot(ver2.6.7), Maven, Spring JPA, Spring Sequrity, Thymeleaf, Lombok
 
  ## 🎈주요 기술
-SpringBoot, Java, JavaScript, jQuery, Querydsl, HTML/CSS
+SpringBoot, Java, JavaScript, jQuery, Ajax, Querydsl, HTML5/CSS3
 
 
  ## 🎈코드 설명 및 시연화면 
