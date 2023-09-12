@@ -15,37 +15,33 @@ SpringBoot, Java, JavaScript, jQuery, Ajax, Querydsl, HTML5/CSS3
  ## 🎈코드 설명 및 시연화면 
  
  ### 💡로그인, 회원가입
- https://lshh222777.tistory.com/127?category=991143
- 
+https://ssshhhh.tistory.com/52
+
  ### 💡연관관계 매핑(DB)
- https://lshh222777.tistory.com/130
- 
- 
+ https://ssshhhh.tistory.com/53
  
  ### 💡상품 등록
- https://lshh222777.tistory.com/132?category=991143
- 
+ https://ssshhhh.tistory.com/54
+
  ### 💡상품 수정
- https://lshh222777.tistory.com/133?category=991143
+ https://ssshhhh.tistory.com/55
  
  ### 💡상품 관리
- https://lshh222777.tistory.com/134?category=991143
+ https://ssshhhh.tistory.com/56
  
-  ### 💡메인 화면
- https://lshh222777.tistory.com/135?category=991143
- 
+ ### 💡메인 화면
+ https://ssshhhh.tistory.com/57
  
  ### 💡주문 기능
-https://lshh222777.tistory.com/136?category=991143
+ https://ssshhhh.tistory.com/58
  
  ### 💡주문 이력 조회
- https://lshh222777.tistory.com/137?category=991143
+ https://ssshhhh.tistory.com/59
  
+ ### 💡주문 취소
+ https://ssshhhh.tistory.com/60
  
-  ### 💡주문 취소
- https://lshh222777.tistory.com/138?category=991143
- 
-  ### 💡장바구니 담기
-  https://lshh222777.tistory.com/139?category=991143
+ ### 💡장바구니 담기
+ https://ssshhhh.tistory.com/61
  
  
